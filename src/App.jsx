@@ -6,7 +6,7 @@ import './styles/main.css'
 
 function App() {
     return (
-        <Router basename="/musicgram">
+        <Router basename="/musicgram-frontend">
             <div className="app">
                 <Routes>
                     <Route path="/" element={<LandingPage />} />
