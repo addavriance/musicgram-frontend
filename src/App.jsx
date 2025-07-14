@@ -1,4 +1,4 @@
-import { HashRouter as Router, Routes, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import LandingPage from './components/LandingPage'
 import AuthCallback from './components/AuthCallback'
 import ErrorPage from './components/ErrorPage'
@@ -6,7 +6,7 @@ import './styles/main.css'
 
 function App() {
     return (
-        <Router basename="/">
+        <Router basename="/musicgram-frontend">
             <div className="app">
                 <Routes>
                     <Route path="/" element={<LandingPage />} />
