@@ -2,8 +2,6 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [ main ] # или master
-  pull_request:
     branches: [ main ]
 
 jobs:
@@ -20,8 +18,14 @@ jobs:
           node-version: '18'
           cache: 'npm'
 
+      - name: Clean npm cache
+        run: npm cache clean --force
+
       - name: Install dependencies
         run: npm ci
+
+      - name: Verify terser installation
+        run: npm list terser
 
       - name: Build
         run: npm run build
