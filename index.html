@@ -1,25 +1,25 @@
 <!doctype html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8"/>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Spotify Telegram Status</title>
-    <meta name="description" content="Показывай что слушаешь прямо в профиле Telegram через канал с автообновлением" />
+    <meta name="description" content="Показывай что слушаешь прямо в профиле Telegram через канал с автообновлением"/>
 
     <!-- Open Graph -->
-    <meta property="og:title" content="Spotify Telegram Status" />
-    <meta property="og:description" content="Показывай что слушаешь прямо в профиле Telegram" />
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content="/og-image.png" />
+    <meta property="og:title" content="Spotify Telegram Status"/>
+    <meta property="og:description" content="Показывай что слушаешь прямо в профиле Telegram"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:image" content="/og-image.png"/>
 
     <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Spotify Telegram Status" />
-    <meta name="twitter:description" content="Показывай что слушаешь прямо в профиле Telegram" />
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:title" content="Spotify Telegram Status"/>
+    <meta name="twitter:description" content="Показывай что слушаешь прямо в профиле Telegram"/>
 
     <!-- Theme -->
-    <meta name="theme-color" content="#1DB954" />
+    <meta name="theme-color" content="#1DB954"/>
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -85,8 +85,12 @@
         }
 
         @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
         }
 
         /* Prevent flash of unstyled content */
@@ -94,6 +98,15 @@
             min-height: 100vh;
         }
     </style>
+    <script>
+        (function () {
+            var redirect = sessionStorage.redirect;
+            delete sessionStorage.redirect;
+            if (redirect && redirect !== location.pathname) {
+                history.replaceState(null, null, redirect);
+            }
+        })();
+    </script>
 </head>
 <body>
 <div id="root">
